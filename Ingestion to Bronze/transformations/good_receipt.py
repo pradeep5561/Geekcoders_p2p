@@ -40,6 +40,7 @@ def raw_gr_binary() -> DataFrame:
             .format("cloudFiles")
             .option("cloudFiles.format", "binaryFile")
             .load(volume_path)
+            .withColumn("text",pdf_bytes_to_text(F.col("content")))
             .withColumn("_load_timestamp", F.current_timestamp())
             .withColumn("filename", F.regexp_extract(F.col("path"), r"([^/]+)$", 1))
     )
