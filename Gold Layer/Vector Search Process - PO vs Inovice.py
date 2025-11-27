@@ -221,7 +221,7 @@ else:
 
 # COMMAND ----------
 
-# MAGIC %skip
+# MAGIC %md
 # MAGIC drop table dev_p2p.gold.2_way_match_results;
 # MAGIC drop table dev_p2p.gold.invoice_vs_po_matches_temp;
 # MAGIC drop table dev_p2p.silver.purchase_order_index;
